@@ -73,7 +73,6 @@ function App() {
     const hasDraw = gameTurns.length === 9 && !winner;
 
     function resetGame() {
-        console.log('on playing again.');
         setGameTurns([]);
     }
 
