@@ -7,7 +7,7 @@ export default function GameOver({ winner, onPlayAgain }) {
                 winner ? <p>Player {winner} won!</p>
                 : <p>Draw!</p>
             }
-                <button onClick={onPlayAgain}>Play again</button>
+                <button className="button" onClick={onPlayAgain}>Play again</button>
         </div>
     );
 }

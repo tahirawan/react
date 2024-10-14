@@ -16,11 +16,20 @@ const INITIAL_GAME_BOARD = [
     [null, null, null],
 ];
 
-function deriveActivePlayer(gameTurns) {
-    let currentPlayer = 'X';
+function getRandomPlayer() {
+    const playerKeys = Object.keys(PLAYERS);
+    const randomIndex = Math.floor(Math.random() * playerKeys.length);
 
-    if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
-        currentPlayer = 'O';
+    return playerKeys[randomIndex];
+}
+
+function deriveActivePlayer(existingPlayer= null, gameTurns) {
+
+    let currentPlayer = existingPlayer ? existingPlayer : getRandomPlayer();
+
+    if (gameTurns.length > 0 && gameTurns[0].player === currentPlayer) {
+        //todo: refactor this logic
+        currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
     }
 
     return currentPlayer;
@@ -63,8 +72,9 @@ function deriveWinner(gameBoard, players) {
 function App() {
     const [players, setPlayers] = useState(PLAYERS)
     const [gameTurns, setGameTurns] = useState([])
+    // const [currentPlayer, setCurrentPlayer] = useState(getRandomPlayer)
 
-    let currentPlayer = deriveActivePlayer(gameTurns);
+    let currentPlayer = deriveActivePlayer(null, gameTurns);
 
     const gameBoard = deriveGameBoard(gameTurns);
 
@@ -76,11 +86,15 @@ function App() {
         setGameTurns([]);
     }
 
+    function onToss() {
+        setGameTurns([]);
+    }
+
     function handleSelectSquare(rowIndex, colIndex) {
-        // setActivePlayer((currentActivePlayer) => currentActivePlayer === 'X' ? 'O' : 'X' );
 
         setGameTurns(prevTurns => {
-            const currentPlayer = deriveActivePlayer(prevTurns);
+            const currentPlayerNew = deriveActivePlayer(currentPlayer, prevTurns);
+
 
             /*let currentPlayer = 'X';
 
@@ -89,7 +103,7 @@ function App() {
             }*/
 
             return [
-                {square: {row: rowIndex, col: colIndex}, player: currentPlayer},
+                {square: {row: rowIndex, col: colIndex}, player: currentPlayerNew},
                 ...prevTurns
             ];
         })
@@ -102,6 +116,10 @@ function App() {
                 [symbol]: newName
             }
         });
+    }
+
+    function hasGameStarted() {
+        return gameTurns.length > 0;
     }
 
     return (
@@ -121,6 +139,13 @@ function App() {
                         onChangeName={handlerPlayerNameChange}
                     />
                 </ol>
+                <div>
+                    <button
+                        className="button small"
+                        onClick={onToss}
+                        disabled={hasGameStarted()}
+                    >Toss</button>
+                </div>
                 {(winner || hasDraw) && <GameOver winner={winner} onPlayAgain={resetGame}/>}
                 <GameBoard
                     onSelectSquare={handleSelectSquare}
