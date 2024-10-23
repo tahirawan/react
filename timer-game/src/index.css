@@ -138,6 +138,14 @@ header p {
   margin: 0.5rem;
 }
 
+.challenge-time-remaining {
+  font-family: 'Handjet', monospace;
+  text-align: center;
+  color: #221c18;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
 .challenge .active {
   animation: flash 1s infinite;
 }
