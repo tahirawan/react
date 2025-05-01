@@ -10,7 +10,7 @@ export function MealsContextProvider({ children }) {
 
   useEffect(() => {
     async function loadMeals() {
-      const response = await fetch('http://localhost:3000/medals');
+      const response = await fetch('http://localhost:3000/meals');
       const meals = await response.json();
       setMeals(meals);
     }
