@@ -1,0 +1,46 @@
+{
+  "events": [
+    {
+      "title": "Adding new event",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPm0QkqbkLWgimzvIGgh3_wQrP0VqDv1B1A&s",
+      "date": "2025-05-24",
+      "description": "This is new event",
+      "id": "b34d5bcc-3335-4818-9f37-2d2b29d1f0a5"
+    },
+    {
+      "id": "010e1ec7-377f-44af-8dec-212361470689",
+      "title": "New Event to test an edit",
+      "image": "https://img.freepik.com/free-vector/modern-music-event-poster-template_1361-1292.jpg?semt=ais_hybrid&w=740",
+      "date": "2025-05-16",
+      "description": "Testing another new event..."
+    },
+    {
+      "title": "Another event",
+      "image": "https://media.istockphoto.com/id/479977238/photo/table-setting-for-an-event-party-or-wedding-reception.jpg?s=612x612&w=0&k=20&c=yIKLzW7wMydqmuItTTtUGS5cYTmrRGy0rXk81AltdTA=",
+      "date": "2025-05-17",
+      "description": "Another description",
+      "id": "a2fdea45-355a-4c20-912c-0d029c03e86f"
+    },
+    {
+      "title": "This is new event",
+      "image": "https://www.eventsindustryforum.co.uk/images/articles/about_the_eif.jpg",
+      "date": "2025-05-18",
+      "description": "This is another event, participate and enjoy.",
+      "id": "81e065e2-2937-42d7-bbfd-01927f4f3edd"
+    },
+    {
+      "title": "New event",
+      "image": "https://cdn-cjhkj.nitrocdn.com/krXSsXVqwzhduXLVuGLToUwHLNnSxUxO/assets/images/optimized/rev-a4983f2/spotme.com/wp-content/uploads/2020/07/Hero-1.jpg",
+      "date": "2025-05-17",
+      "description": "Please join and enjoy the event.",
+      "id": "85dd93e3-7776-4575-93c4-ba0aa939e454"
+    },
+    {
+      "id": "e1",
+      "title": "A dummy event",
+      "date": "2023-02-22",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Join this amazing event and connect with fellow developers."
+    }
+  ]
+}
